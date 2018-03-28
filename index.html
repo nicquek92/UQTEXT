@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--  This is the main tittle that appears in tab of the browser -->
+	<title>UQ Text</title>
+	<!--  Link to the css style sheet -->
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<!--  Link to font awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>	
+
+<body>
+	<h1>HEy ... can you see me </h1>
+	<nav>
+
+		<div id="navbar">
+			<a href="index.html">UQ TEXT</a>
+			<div id="move">
+			  <a class="active" href="javascript:void(0)">Textbooks</a>`
+			  <a href="javascript:void(0)">E-Books</a>
+			  <a href="javascript:void(0)">Login</a>
+			  <a href="javascript:void(0)">SignUp</a>
+			</div>
+		</div>
+		<div class="header">
+  			<h2>Buy or Rent Textbooks</h2>
+  			<input id="search" placeholder="Enter course code, Tittle or ISBN" type="text">
+		</div>
+		  
+	</nav>
+
+	<script>
+		// This is the fixed nav bar functionality
+		window.onscroll = function() {myFunction()};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+		    navbar.classList.add("sticky")
+		  } else {
+		    navbar.classList.remove("sticky");
+		  }
+		}
+	</script>
+<footer>
+hello hello
+</footer>
+</body>
+
+</html>
