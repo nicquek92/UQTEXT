@@ -1,0 +1,91 @@
+<html>
+<head>
+	<!--  This is the main tittle that appears in tab of the browser -->
+	<title>UQ Text</title>
+	<meta charset="utf-8">
+	<!--  Link to the css style sheet -->
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+	<!--  Link to font awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>	
+
+<body>
+	<nav>
+		<div id="navbar">
+			<a href="index.html">UQ TEXT</a>
+			<div id="move">
+			  <a class="active" href="javascript:void(0)">Textbooks</a>`
+			  <a href="javascript:void(0)">E-Books</a>
+			  <a href="javascript:void(0)">Login</a>
+			  <a href="javascript:void(0)">SignUp</a>
+			</div>
+		</div>
+		<div class="header">
+  			<h1>Buy or Rent Textbooks</h1>
+  			<input id="search" placeholder="Enter course code, Tittle or ISBN" type="text">
+		</div>
+		  <div>
+		  </div>
+	</nav>
+
+	<div id="parent">
+	 	<div id="categories">Categories (rest of width)</div>
+
+
+	  	<div id="login">login (200px)
+			<!-- wrapper -->
+			<div class="wrapper">
+				<form action="/action_page.php">
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+			</div>
+
+	</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+		// This is the fixed nav bar functionality
+		window.onscroll = function() {myFunction()};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+		    navbar.classList.add("sticky")
+		  } else {
+		    navbar.classList.remove("sticky");
+		  }
+		}
+	</script>
+
+</body>
+
+</html>
