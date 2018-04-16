@@ -81,6 +81,8 @@ input[type=text]:focus {
 
   /* Just so it's visible */
   border:2px black solid;
+  display: table;
+
 }
 
 /* This is the css for the products list I'm working from this website */
