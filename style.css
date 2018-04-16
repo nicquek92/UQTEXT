@@ -10,6 +10,10 @@ padding-left: 899px;
   overflow: hidden;
   background-color: #636363;
 }
+#logo {
+  font-family: 'Gugi', cursive;
+  margin: 25px 74px;
+}
 h1 {
 color:white;
 
@@ -89,7 +93,7 @@ body {
 .wrapper {
     width: 705px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 0px;
 }
 .clear {
     clear: both;
@@ -101,10 +105,11 @@ body {
 .item {
     background-color: #fff;
     float: left;
-    margin: -25px 10px 10px 0;
+    margin: 9px 10px 10px 0;
     width: 205px;
     padding: 10px;
     height: 369px;
+    display: table;
 }
 .item img {
     display: block;
@@ -127,6 +132,7 @@ button {
     margin: 5px 0;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 5px;
 }
 span {
     float: right;
@@ -155,7 +161,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #EE7500;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
