@@ -7,12 +7,14 @@
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen">
 	<!--  Link to font awesome -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--  Link to google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 </head>	
 
 <body>
 	<nav>
 		<div id="navbar">
-			<a href="index.html">UQ TEXT</a>
+			<div id=logo><a href="index.html" style="font-size:35px;font-family: 'Gugi', cursive;">UQ TEXT</a></div>
 			<div id="move">
 			  <a class="active" href="index.html">Textbooks</a>`
 			  <a href="javascript:void(0)">E-Books</a>
@@ -37,24 +39,22 @@
 			<div class="wrapper">
 				<form action="/action_page.php">
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+				  <div class="container">
+				    <label for="uname"><b>Username</b></label>
+				    <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+				    <label for="psw"><b>Password</b></label>
+				    <input type="password" placeholder="Enter Password" name="psw" required>
+				        
+				    <button type="submit">Login</button>
+				    <label>
+				      <input type="checkbox" checked="checked" name="remember"> Remember me
+				    </label>
+				    <button type="button" class="cancelbtn">Cancel</button>
+				    <span class="psw">Forgot <a href="#">password?</a></span>
+				  </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
+  
 			</div>
 
 	</div>

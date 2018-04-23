@@ -25,7 +25,7 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 /* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
+#search:focus {
     width: 900px;
 }
 
@@ -70,12 +70,14 @@ input[type=text]:focus {
   display: flex;
 }
 #categories {
-  width: 336px;
+  /*width: 336px;*/
+  width: 28%;
   height: 100%;
   border:2px black solid;
   /* Just so it's visible */
 }
 #products {
+  width: 70%;
   flex: 1;
   /* Grow to rest of container */
 
@@ -93,22 +95,23 @@ body {
     color: #333;
 }
 .wrapper {
-    width: 705px;
-    margin: 20px auto;
-    padding: 0px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 30px;
 }
 .clear {
     clear: both;
 }
 .items {
+    width: 100%;
     display: block;
-    margin: 20px -140px;
+    /*margin: 20px -140px;*/
 }
 .item {
     background-color: #fff;
     float: left;
     margin: 9px 10px 10px 0;
-    width: 205px;
+    width: 20%;
     padding: 10px;
     height: 369px;
     display: table;
@@ -151,7 +154,7 @@ span {
 }
 
 body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -193,7 +196,7 @@ img.avatar {
 }
 
 .container {
-    padding: 16px;
+    padding: 85px;
 }
 
 span.psw {
