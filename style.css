@@ -1,14 +1,15 @@
 .header {
-  background-color: #848080;
+  background-color: #DCC7AA;
   padding: 20px;
   text-align: center;
 }
 #move{
 padding-left: 1080px;
+margin: -100px;
 }
 #navbar {
   overflow: hidden;
-  background-color: #848080;
+  background-color: #DCC7AA;
 }
 #logo {
   font-family: 'Gugi', cursive;
@@ -40,8 +41,8 @@ input[type=text] {
 }
 
 #navbar a:hover {
-  background-color: #F1EDEA;
-  color: black;
+  background-color: #EE7500;
+  color: white;
 }
 
 #navbar a.active {
@@ -73,7 +74,7 @@ input[type=text] {
   /*width: 336px;*/
   width: 28%;
   height: 100%;
-  border:2px black solid;
+  /*border:2px black solid; */
   /* Just so it's visible */
 }
 #products {
@@ -81,8 +82,9 @@ input[type=text] {
   flex: 1;
   /* Grow to rest of container */
 
-  /* Just so it's visible */
+  /* Just so it's visible 
   border:2px black solid;
+  */
   display: table;
 
 }
@@ -115,6 +117,7 @@ body {
     padding: 10px;
     height: 369px;
     display: table;
+    box-shadow: 2px 2px 2px 2px #DCDCDC;
 }
 .item img {
     display: block;
@@ -219,9 +222,10 @@ span.psw {
 
 .single {
 padding: 30px 15px;
-margin-top: 32px;
+margin-top: 39px;
 background: #fcfcfc;
-border: 7px solid #f0f0f0; 
+border: 7px solid #FFF; 
+box-shadow: 2px 2px 2px 2px #DCDCDC;
 }
 
 .single h3.side-title {
@@ -267,7 +271,7 @@ border-bottom: 0;
 /* css footer */
 
 .footer-distributed{
-	background-color: #5E5B5B;
+	background-color: #DCC7AA;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -374,7 +378,7 @@ border-bottom: 0;
 
 .footer-distributed .footer-company-about{
 	line-height: 20px;
-	color:  #92999f;
+	color:  #6b7a8f;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
@@ -391,7 +395,7 @@ border-bottom: 0;
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #33383b;
+	background-color:  #6b7a8f;
 	border-radius: 2px;
 
 	font-size: 20px;
@@ -400,6 +404,12 @@ border-bottom: 0;
 	line-height: 35px;
 	margin-right: 3px;
 	margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a i{
+  display: inline-block;
+  width: 21px;
+  margin:7px;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */

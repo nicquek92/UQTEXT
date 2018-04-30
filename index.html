@@ -9,6 +9,8 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--  Link to google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+	<!--  Fa Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>	
 
 <body>
@@ -16,7 +18,7 @@
 		<div id="navbar">
 			<div id=logo><a href="index.html" style="font-size:35px;font-family: 'Gugi', cursive;">UQ TEXT</a></div>
 			<div id="move">
-			  <a class="active" href="index.html">Textbooks</a>`
+			  <a class="active" href="index.html">Textbooks</a>
 			  <a href="javascript:void(0)">Categories</a>
 			  <a href="login.html">Login</a>
 			  <a href="javascript:void(0)">Contact Us</a>
@@ -32,7 +34,7 @@
 
 	<!-- This is the containers for the categories and products list -->
 	<div id="parent">
-	 	<div id="categories">Categories (rest of width)
+	 	<div id="categories">
 			<!-- Category -->
 			<div class="single category">
 				<h3 class="side-title">Categories</h3>
@@ -49,7 +51,7 @@
 		   	</div>
 		</div>
 
-	  	<div id="products">Products (200px)
+	  	<div id="products">
 			<!-- wrapper -->
 			<div class="wrapper">
 				    <div class="clear"></div>
@@ -163,32 +165,6 @@
 	  	</div>
 	</div>
 
-
-
-
-
-
-
-
-
-
-
-	<script>
-		// This is the fixed nav bar functionality
-		window.onscroll = function() {myFunction()};
-
-		var navbar = document.getElementById("navbar");
-		var sticky = navbar.offsetTop;
-
-		function myFunction() {
-		  if (window.pageYOffset >= sticky) {
-		    navbar.classList.add("sticky")
-		  } else {
-		    navbar.classList.remove("sticky");
-		  }
-		}
-	</script>
-
 	<footer class="footer-distributed">
 
 		<div class="footer-left">
@@ -246,6 +222,27 @@
 			</div>
 
 		</footer>
+
+		<script>
+		// This is the fixed nav bar functionality
+		window.onscroll = function() {myFunction()};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+		    navbar.classList.add("sticky")
+		  } else {
+		    navbar.classList.remove("sticky");
+		  }
+		}
+		// When users click on nav bar it makes it active
+		$(".nav a").on("click", function(){
+		   $(".nav").find(".active").removeClass("active");
+		   $(this).parent().addClass("active");
+		});
+	</script>
 </body>
 
 </html>
