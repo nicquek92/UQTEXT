@@ -1,0 +1,370 @@
+/* This is the css for the categories and product list */
+
+#parent {
+  display: flex;
+}
+#categories {
+  /*width: 336px;*/
+  width: 28%;
+  height: 100%;
+  /*border:2px black solid; */
+  /* Just so it's visible */
+}
+#products {
+  width: 70%;
+  flex: 1;
+  /* Grow to rest of container */
+
+  /* Just so it's visible 
+  border:2px black solid;
+  */
+  display: table;
+
+}
+
+/* This is the css for the products list I'm working from this website */
+
+body {
+    background-color: #F2EEE9;
+    font: normal 13px/1.5 Georgia, Serif;
+    color: #333;
+}
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    padding: 30px;
+}
+.clear {
+    clear: both;
+}
+.items {
+    width: 100%;
+    display: block;
+    /*margin: 20px -140px;*/
+}
+.item {
+    background-color: #fff;
+    float: left;
+    margin: 9px 10px 10px 0;
+    width: 20%;
+    padding: 10px;
+    height: 369px;
+    display: table;
+    box-shadow: 2px 2px 2px 2px #DCDCDC;
+}
+.item img {
+    display: block;
+    margin: auto;
+}
+h2 {
+    font-size: 16px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 10px 0;
+    padding: 0 0 5px 0;
+}
+button {
+    border: 1px solid #722A1B;
+    padding: 4px 14px;
+    background-color: #fff;
+    color: #722A1B;
+    text-transform: uppercase;
+    float: right;
+    margin: 5px 0;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+span {
+    float: right;
+}
+
+/* login css*/
+
+#login {
+  flex: 1;
+  /* Grow to rest of container */
+
+  /* Just so it's visible */
+  border:2px black solid;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #EE7500;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 85px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+/* This is the style for the categories list */
+
+.single {
+padding: 30px 15px;
+margin-top: 39px;
+background: #fcfcfc;
+border: 7px solid #FFF; 
+box-shadow: 2px 2px 2px 2px #DCDCDC;
+}
+
+.single h3.side-title {
+margin: 0;
+margin-bottom: 10px;
+padding: 0;
+font-size: 20px;
+color: #333;
+text-transform: uppercase; 
+}
+
+.single h3.side-title:after {
+content: '';
+width: 60px;
+height: 1px;
+background: #ff173c;
+display: block;
+margin-top: 6px; 
+}
+
+.single ul {
+margin-bottom: 0; 
+list-style-type:none;
+padding: 0;
+}
+
+.single li a {
+color: #666;
+font-size: 14px;
+text-transform: uppercase;
+border-bottom: 1px solid #f0f0f0;
+line-height: 40px;
+display: block;
+text-decoration: none; 
+}
+.single li a:hover {
+color: #ff173c; 
+}
+.single li:last-child a {
+border-bottom: 0; 
+}
+
+/* css footer */
+
+.footer-distributed{
+	background-color: #DCC7AA;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 5px 10px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-grid;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+	padding-left: 20px;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+	padding-left: 120px;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 68px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:10;
+}
+
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+	color:  #ffffff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #6b7a8f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+
+.footer-distributed .footer-icons{
+	margin-top: 15px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #6b7a8f;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a i{
+  display: inline-block;
+  width: 21px;
+  margin:7px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
