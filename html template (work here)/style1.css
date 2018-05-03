@@ -21,6 +21,17 @@
   display: table;
 
 }
+#search {
+  width: 140%;
+  margin-left: -110%;
+}
+#submit {
+  width: 41%;
+  margin-left: 1%;
+}
+#navcolour{
+  background-color: #DCC7AA !important;
+}
 
 /* This is the css for the products list I'm working from this website */
 
@@ -63,18 +74,7 @@ h2 {
     margin: 0 0 10px 0;
     padding: 0 0 5px 0;
 }
-button {
-    border: 1px solid #722A1B;
-    padding: 4px 14px;
-    background-color: #fff;
-    color: #722A1B;
-    text-transform: uppercase;
-    float: right;
-    margin: 5px 0;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
+
 span {
     float: right;
 }
@@ -109,7 +109,10 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 5px !important;
 }
+
+
 
 button:hover {
     opacity: 0.8;
