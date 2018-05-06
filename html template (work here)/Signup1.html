@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="Login1.css" />
+    <link rel="stylesheet" href="Signup1.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>UQ Text</title>
@@ -75,29 +75,36 @@
 				    <div class="clear"></div>
 			<form action="/action_page.php">
 
-				 <div id="login" class="animate form">
-                    <form id="login_form_another" autocomplete="on" method="post" action="php/login.php">
-                        <h1>Log in</h1>
+				 <div id="register" class="animate form">
+                    <form id="signup_form" autocomplete="on" method="post" action="php/signup.php">
+                        <h1> Sign up </h1>
                         <p>
-                            <label for="username" class="uname" data-icon="u"> Your Email or Username </label>
-                            <input id="username" name="username" required="required" type="text"
-                                   placeholder="Email or Username"/>
+                            <label for="usernamesignup" class="uname" data-icon="u">Username</label>
+                            <input id="usernamesignup" name="username" required="required" type="text"
+                                   placeholder="Username"/>
                         </p>
                         <p>
-                            <label for="password" class="youpasswd" data-icon="p"> Your Password </label>
-                            <input id="password" name="password" required="required" type="password"
+                            <label for="emailsignup" class="youmail" data-icon="e"> Email</label>
+                            <input id="emailsignup" name="email" required="required" type="email"
+                                   placeholder="Email"/>
+                        </p>
+                        <p>
+                            <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>
+                            <input id="passwordsignup" name="password" required="required" type="password"
                                    placeholder="Password"/>
                         </p>
-                        <p class="keeplogin">
-                            <input type="checkbox" name="remember_me" id="loginkeeping" value="loginkeeping"/>
-                            <label for="loginkeeping">Remember Me</label>
+                        <p>
+                            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirm
+                                Password </label>
+                            <input id="passwordsignup_confirm" name="password_confirm" required="required"
+                                   type="password" placeholder="Confirm Password"/>
                         </p>
-                        <p class="login button">
-                            <input type="submit" value="Login"/>
+                        <p class="signin button">
+                            <input type="submit" value="Sign up"/>
                         </p>
                         <p class="change_link">
-                            Not a member yet ?
-                            <a href="Signup1.html" class="to_register">Join us</a>
+                            Already a member ?
+                            <a href="Login1.html" class="to_register"> Go and log in </a>
                         </p>
                     </form>
                 </div>
