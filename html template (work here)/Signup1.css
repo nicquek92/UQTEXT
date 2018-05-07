@@ -391,12 +391,12 @@ border-bottom: 0;
 }
 
 #register.animate.form {
+	border-color: #A8A99E;
 	padding-left: 25px;
 	margin-top: 10px;
 }
 
 #register {
 	box-shadow: 2px 2px 2px 2px #DCDCDC;
-	border-color: #A8A99E;
 	border:2px black solid;
 }
