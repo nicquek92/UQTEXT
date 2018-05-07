@@ -374,20 +374,29 @@ border-bottom: 0;
 
 /* Signup css*/
 
-#username {
+#usernamesignup {
 	width: 500px;
 }
 
-#password {
+#passwordsignup {
 	width: 500px;
 }
+#emailsignup {
+		width: 500px;
+		padding: 12px 20px;
+}
 
-#login.animate.form {
+#passwordsignup_confirm{
+		width: 500px;
+}
+
+#register.animate.form {
 	padding-left: 25px;
 	margin-top: 10px;
 }
 
-#login {
+#register {
 	box-shadow: 2px 2px 2px 2px #DCDCDC;
 	border-color: #A8A99E;
+	border:2px black solid;
 }
