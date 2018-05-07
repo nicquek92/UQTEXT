@@ -37,9 +37,17 @@
 /* This is the css for the products list I'm working from this website */
 
 body {
+	font-family: Arial, Helvetica, sans-serif;
     background-color: #F2EEE9;
     font: normal 13px/1.5 Georgia, Serif;
     color: #333;
+    height: 100%;
+  	margin: 0;
+}
+.content {
+  padding: 20px;
+  min-height: 100%;
+  margin: 0 auto -50px;
 }
 .wrapper {
     width: 100%;
@@ -90,7 +98,7 @@ span {
   border:2px black solid;
 }
 
-body {font-family: Arial, Helvetica, sans-serif;}
+
 
 
 input[type=text], input[type=password] {
@@ -207,14 +215,18 @@ border-bottom: 0;
 
 /* css footer */
 
+/* css for sticky footer */
+.push {
+  height: 185px;
+}
+
 .footer-distributed{
 	background-color: #DCC7AA;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
-
+	font: bold 16px sans-serif
 	padding: 5px 10px;
 	margin-top: 80px;
 }

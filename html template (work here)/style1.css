@@ -39,6 +39,19 @@ body {
     background-color: #F2EEE9;
     font: normal 13px/1.5 Georgia, Serif;
     color: #333;
+    height: 100%;
+  	margin: 0;
+}
+.content {
+  padding: 20px;
+  min-height: 100%;
+  margin: 0 auto -50px;
+}
+.content1 {
+  padding: 20px;
+  min-height: 100%;
+  margin: 30px auto -50px;
+  margin-left: 100px;
 }
 .wrapper {
     width: 100%;
@@ -205,6 +218,10 @@ border-bottom: 0;
 }
 
 /* css footer */
+/* css for sticky footer */
+.push {
+  height: 50px;
+}
 
 .footer-distributed{
 	background-color: #DCC7AA;
@@ -213,7 +230,6 @@ border-bottom: 0;
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
 	padding: 5px 10px;
 	margin-top: 80px;
 }
@@ -380,3 +396,22 @@ border-bottom: 0;
 #password {
 	width: 500px;
 }
+
+
+/* This is the css for the shopping cart*/
+
+.row{
+      margin-right: -160px !important;
+}
+.media-body {
+  margin-left: 25px !important;
+  margin-top: 5px;
+}
+
+.media .media-body a{
+  color: black !important;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
