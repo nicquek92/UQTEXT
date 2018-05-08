@@ -387,11 +387,13 @@ border-bottom: 0;
 /* Login css*/
 
 #username {
-	width: 500px;
+	width:500px;
+	padding: 5px 12px;
 }
 
 #password {
 	width: 500px;
+	padding: 5px 12px;
 }
 
 #login.animate.form {

@@ -376,18 +376,22 @@ border-bottom: 0;
 
 #usernamesignup {
 	width: 500px;
+	padding: 5px 12px;
 }
 
 #passwordsignup {
 	width: 500px;
+	padding: 5px 12px;
 }
 #emailsignup {
-		width: 500px;
-		padding: 12px 20px;
+	width: 500px;
+	padding: 5px 12px;
+	border: 1px solid #ccc
 }
 
 #passwordsignup_confirm{
-		width: 500px;
+	width: 500px;
+	padding: 5px 12px;
 }
 
 #register.animate.form {
