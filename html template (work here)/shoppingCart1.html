@@ -13,6 +13,16 @@
     <title>UQ Text</title>
     <!--  Fa Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Optional JavaScript -->
+    <script src="js/javascript.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
 
 <body>
     <nav id="navcolour" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,18 +52,12 @@
             <button id="submit" class="btn" type="submit">Search</button>
         </form>
     </nav>
-    <!-- Optional JavaScript -->
-    <script src="/uqtext/js/javascript.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- This is the Shopping cart page -->
     <div class="content1"> 
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <table class="table table-hover">
+                <table class="table table-hover" id="tableCheck">
                     <thead>
                         <tr>
                             <th>Books</th>
@@ -64,7 +68,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="remove">
                             <td class="col-sm-8 col-md-6">
                             <div class="media">
                                 <a class="thumbnail pull-left" href="#"> <img class="media-object" src="images/book.jpg" style="width: 72px; height: 72px;"> </a>
@@ -74,16 +78,16 @@
                                 </div>
                             </div></td>
                             <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                            <select class="1-20"></select>
                             </td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
                             <td class="col-sm-1 col-md-1">
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" id="btn1" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span> Remove
                             </button></td>
                         </tr>
-                        <tr>
+                        <tr class="remove2">
                             <td class="col-md-6">
                             <div class="media">
                                 <a class="thumbnail pull-left" href="#"> <img class="media-object" src="images/book1.jpg" style="width: 72px; height: 72px;"> </a>
@@ -93,12 +97,12 @@
                                 </div>
                             </div></td>
                             <td class="col-md-1" style="text-align: center">
-                            <input type="email" class="form-control" id="exampleInputEmail1" value="2">
+                            <select class="1-20"></select>
                             </td>
                             <td class="col-md-1 text-center"><strong>$4.99</strong></td>
                             <td class="col-md-1 text-center"><strong>$9.98</strong></td>
                             <td class="col-md-1">
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" id="btn2" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span> Remove
                             </button></td>
                         </tr>
@@ -202,6 +206,39 @@
 			</div>
 
 		</footer>
+
+        <!--  This is the JS for the remove functionality -->
+        <script type="text/javascript">
+        
+        $( document ).ready(function() {
+            console.log( "ready!" );
+        // This the click function to remover elements from checkout
+        $( "#btn1" ).click(function() {
+              $("tr.remove").hide();
+        });
+        $( "#btn2" ).click(function() {
+              $("tr.remove2").hide();
+        });
+
+
+
+        
+        // This is the function for the dropdown numbers
+        $(function(){
+            var $select = $(".1-20");
+            for (i=1;i<=20;i++){
+                $select.append($('<option></option>').val(i).html(i))
+            }
+        });
+
+
+
+
+        });
+            
+
+
+        </script>
 
 	</body>
 </html>

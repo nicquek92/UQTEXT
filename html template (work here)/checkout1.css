@@ -1,27 +1,6 @@
 
 /* This is the css for the categories and product list */
 
-#parent {
-  display: flex;
-}
-#categories {
-  /*width: 336px;*/
-  width: 28%;
-  height: 100%;
-  /*border:2px black solid; */
-  /* Just so it's visible */
-}
-#products {
-  width: 70%;
-  flex: 1;
-  /* Grow to rest of container */
-
-  /* Just so it's visible 
-  border:2px black solid;
-  */
-  display: table;
-
-}
 #search {
   width: 140%;
   margin-left: -110%;
@@ -54,108 +33,9 @@ body {
   margin: 30px auto -50px;
   margin-left: 100px;
 }
-.wrapper {
-    width: 100%;
-    margin: 0px auto;
-    padding: 30px;
-}
-.clear {
-    clear: both;
-}
-.items {
-    width: 100%;
-    display: block;
-    /*margin: 20px -140px;*/
-}
-.item {
-    background-color: #fff;
-    float: left;
-    margin: 9px 10px 10px 0;
-    width: 20%;
-    padding: 10px;
-    height: 369px;
-    display: table;
-    box-shadow: 2px 2px 2px 2px #DCDCDC;
-}
-.item img {
-    display: block;
-    margin: auto;
-}
-h2 {
-    font-size: 16px;
-    display: block;
-    border-bottom: 1px solid #ccc;
-    margin: 0 0 10px 0;
-    padding: 0 0 5px 0;
-}
-
-span {
-    float: right;
-}
-
-/* login css*/
-
-#login {
-  flex: 1;
-  /* Grow to rest of container */
-
-  /* Just so it's visible */
-  border:2px black solid;
-}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #EE7500;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px !important;
-}
 
 
 
-button:hover {
-    opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 85px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -168,55 +48,7 @@ span.psw {
     }
 }
 
-/* This is the style for the categories list */
 
-.single {
-padding: 30px 15px;
-margin-top: 39px;
-background: #fcfcfc;
-border: 7px solid #FFF; 
-box-shadow: 2px 2px 2px 2px #DCDCDC;
-}
-
-.single h3.side-title {
-margin: 0;
-margin-bottom: 10px;
-padding: 0;
-font-size: 20px;
-color: #333;
-text-transform: uppercase; 
-}
-
-.single h3.side-title:after {
-content: '';
-width: 60px;
-height: 1px;
-background: #ff173c;
-display: block;
-margin-top: 6px; 
-}
-
-.single ul {
-margin-bottom: 0; 
-list-style-type:none;
-padding: 0;
-}
-
-.single li a {
-color: #666;
-font-size: 14px;
-text-transform: uppercase;
-border-bottom: 1px solid #f0f0f0;
-line-height: 40px;
-display: block;
-text-decoration: none; 
-}
-.single li a:hover {
-color: #ff173c; 
-}
-.single li:last-child a {
-border-bottom: 0; 
-}
 
 /* css footer */
 /* css for sticky footer */
@@ -402,7 +234,7 @@ border-bottom: 0;
 /* This is the css for the shopping cart*/
 
 .row{
-      margin-right: -160px !important;
+      margin-right: -37px !important;
 }
 .media-body {
   margin-left: 25px !important;
@@ -417,12 +249,6 @@ border-bottom: 0;
 
 /* This is the css for the checkout page */
 
-body {
-  font-family: Arial;
-  font-size: 17px;
-  padding: 8px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -432,7 +258,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  margin: 0 -16px;
+  margin: 0 35px;
 }
 
 .col-25 {
@@ -442,8 +268,29 @@ body {
 
 .col-50 {
   -ms-flex: 50%; /* IE10 */
-  flex: 50%;
+  flex: 25%;
 }
+.col-60 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 25%;
+}
+
+.col-65 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 25%;
+  margin-right: 13%;
+}
+.col-95 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 31%;
+  margin-right: 11%;
+}
+.col-35 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 30%;
+  margin-left: 3%;
+}
+
 
 .col-75 {
   -ms-flex: 75%; /* IE10 */
@@ -461,14 +308,43 @@ body {
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
+  width: 85% !important;
+  margin-left: 0px !important;
 }
 
+.container2 {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width: 82% !important;
+  margin-left: -151px !important;
+}
+.container3 {
+  margin-left: 846px !important;
+  margin-top: -355px;
+}
+
+#state {
+  width: 5% !important;
+}
+#zip {
+  width: 5% !important;
+}
+#zip2 {
+  margin-left:5% !important;
+}
+
+
+
 input[type=text] {
-  width: 100%;
+  min-width: 88%;
+  max-width: 100%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  box-sizing : border-box;
 }
 
 label {
@@ -483,7 +359,7 @@ label {
 }
 
 .btn {
-  background-color: black;
+  background-color: #4CAF50;
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -495,6 +371,22 @@ label {
 }
 
 .btn:hover {
+  background-color: #45a049;
+}
+
+.btnS {
+  background-color: black;
+  color: white;
+  padding: 7px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btnS:hover {
   background-color: #EE7500;
 }
 
@@ -520,6 +412,3 @@ span.price {
     margin-bottom: 20px;
   }
 }
-
-
-
