@@ -405,3 +405,10 @@ border-bottom: 0;
 	box-shadow: 2px 2px 2px 2px #DCDCDC;
 	border-color: #A8A99E;
 }
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 170px;
+  text-align: left;
+}
