@@ -394,17 +394,22 @@ label {
 }
 
 #formupload p {
-	padding-left: 500px;
+	padding-left: 370px;
 }
 
 #username {
+	width:200px;
+	padding: 5px 12px;
+}
+
+#des {
 	width:500px;
+	height:120px;
 	padding: 5px 12px;
 }
 
-#username {
-	width: 500px;
-	padding: 5px 12px;
+label.des {
+	padding-bottom: 30px;
 }
 
 #login.animate.form {
@@ -417,9 +422,21 @@ label {
 	border-color: #A8A99E;
 }
 
+#upload button {
+	padding-left: 50px;
+}
+
 /* imagebox css */
 
 #imagebox {
 	padding-left: 0px;
 }
 
+div#imagebox.imageimage {
+	width: 30%;
+}
+
+img#blah {
+	padding-bottom: 10px;
+	border:1px black solid;
+}
