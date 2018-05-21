@@ -88,12 +88,12 @@ h2 {
     margin: 0 0 10px 0;
     padding: 0 0 5px 0;
 }
-
+/*
 span {
     float: right;
 }
 
-/* login css*/
+ login css*/
 
 #login {
   flex: 1;
@@ -415,6 +415,10 @@ border-bottom: 0;
   font-size: 18px;
 }
 
+.remove3 {
+  display: none;
+}
+
 /* This is the css for the checkout page */
 
 body {
@@ -519,6 +523,70 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+}
+
+/* This the css for the drop down cart*/
+
+.view-cart {
+text-align:center;
+margin-left: 90px;
+text-decoration: none;
+}
+ul.dropdown-cart li .view-cart:hover{
+    background-color:#f3f3f3;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+left: -156px !important;
+z-index: 0!important;
+}
+ul.dropdown-cart{
+    min-width:250px;
+}
+ul.dropdown-cart li .item2{
+    display:block;
+    padding:3px 24px;
+    margin: 3px 0;
+}
+ul.dropdown-cart li .item2:hover{
+    background-color:#f3f3f3;
+}
+ul.dropdown-cart li .item2:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;   
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+}
+ul.dropdown-cart li .item-right button{
+    margin-top:14px;
+}
+
+a.dropdown-toggle{
+  margin-right: 10px;
+}
+
+a.dropdown-toggle:hover{
+  text-decoration: none;
 }
 
 
