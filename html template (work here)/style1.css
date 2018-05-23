@@ -1,3 +1,40 @@
+/* Keeping the website organized */
+body {
+    background-color: #F2EEE9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    height: 100%;
+    margin: 0;
+    font-size: 17px;
+    padding: 8px;
+}
+
+#containerContent {
+   min-height:100%;
+   position:relative;
+}
+
+#header {
+   padding:0px;
+}
+#body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
+
+
+/* Information page style */
+#info {
+  background:#f7f6f3;
+
+}
+
 
 /* This is the css for the categories and product list */
 
@@ -35,14 +72,6 @@
 }
 
 /* This is the css for the products list I'm working from this website */
-
-body {
-    background-color: #F2EEE9;
-    font: normal 13px/1.5 Georgia, Serif;
-    color: #333;
-    height: 100%;
-  	margin: 0;
-}
 .content {
   padding: 20px;
   min-height: 100%;
@@ -102,9 +131,6 @@ span {
   /* Just so it's visible */
   border:2px black solid;
 }
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -421,11 +447,7 @@ border-bottom: 0;
 
 /* This is the css for the checkout page */
 
-body {
-  font-family: Arial;
-  font-size: 17px;
-  padding: 8px;
-}
+
 
 * {
   box-sizing: border-box;
@@ -589,5 +611,100 @@ a.dropdown-toggle:hover{
   text-decoration: none;
 }
 
+.mySlides {display: block;}
+img {vertical-align: middle;}
+
+/* This is the start of te Slideshow images CSS*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: white;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 
 

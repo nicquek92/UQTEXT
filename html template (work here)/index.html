@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html lang="en">
 
 <head>
@@ -25,6 +25,8 @@
 </head>
 
 <body>
+<div id="containerContent">
+	<div id="header">
     <nav id="navcolour" class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">UQ Text</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,8 +120,10 @@
 	        </li>
 	    </ul>
     </nav>
- 
+ </div>
+
 	<!-- This is the containers for the categories and products list -->
+	<div id="body">
 	<div id="parent" class="content">
 	 	<div id="categories">
 			<!-- Category -->
@@ -248,9 +252,69 @@
 				</div>
 				<!--/ wrapper -->	
 	  	</div>
-	  	<div class="push"></div>
+	</div>
+	<div class="push"></div>
+
+	<div id="info">
+		<h3 align="center"> Buy cheap University Texbooks</h3>
+		<p align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dui elit, ultrices sit amet accumsan in, placerat sit amet orci. In interdum laoreet faucibus. Duis dictum augue justo, vel pharetra libero lobortis tincidunt. Maecenas dictum dapibus libero vel dignissim. Suspendisse eget nibh laoreet nibh fringilla venenatis. Donec lacus tortor, efficitur non dapibus non, tempor et arcu. Aenean erat erat, dictum et euismod at, semper et ligula. Proin id quam ultrices urna placerat iaculis. Mauris accumsan ligula sed ornare tempus. Maecenas ac consequat lorem. Vestibulum ullamcorper ante et justo suscipit, sed malesuada lectus faucibus. Nullam fermentum ullamcorper nibh, eu efficitur massa tincidunt nec. Ut eleifend eros dapibus finibus sollicitudin. Praesent magna mi, mollis lobortis convallis quis, suscipit quis urna. Sed nulla dolor, sollicitudin a leo vitae, malesuada semper lacus. Ut eleifend posuere mollis.</p>
+
+		<h3 align="center">Rent affordable University Texbooks</h3>
+		<p align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dui elit, ultrices sit amet accumsan in, placerat sit amet orci. In interdum laoreet faucibus. Duis dictum augue justo, vel pharetra libero lobortis tincidunt. Maecenas dictum dapibus libero vel dignissim. Suspendisse eget nibh laoreet nibh fringilla venenatis. Donec lacus tortor, efficitur non dapibus non, tempor et arcu. Aenean erat erat, dictum et euismod at, semper et ligula. Proin id quam ultrices urna placerat iaculis. Mauris accumsan ligula sed ornare tempus. Maecenas ac consequat lorem. Vestibulum ullamcorper ante et justo suscipit, sed malesuada lectus faucibus. Nullam fermentum ullamcorper nibh, eu efficitur massa tincidunt nec. Ut eleifend eros dapibus finibus sollicitudin. Praesent magna mi, mollis lobortis convallis quis, suscipit quis urna. Sed nulla dolor, sollicitudin a leo vitae, malesuada semper lacus. Ut eleifend posuere mollis.</p>
+
+		<h3 align="center">Sell preowned University Texbooks</h3>
+		<p align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dui elit, ultrices sit amet accumsan in, placerat sit amet orci. In interdum laoreet faucibus. Duis dictum augue justo, vel pharetra libero lobortis tincidunt. Maecenas dictum dapibus libero vel dignissim. Suspendisse eget nibh laoreet nibh fringilla venenatis. Donec lacus tortor, efficitur non dapibus non, tempor et arcu. Aenean erat erat, dictum et euismod at, semper et ligula. Proin id quam ultrices urna placerat iaculis. Mauris accumsan ligula sed ornare tempus. Maecenas ac consequat lorem. Vestibulum ullamcorper ante et justo suscipit, sed malesuada lectus faucibus. Nullam fermentum ullamcorper nibh, eu efficitur massa tincidunt nec. Ut eleifend eros dapibus finibus sollicitudin. Praesent magna mi, mollis lobortis convallis quis, suscipit quis urna. Sed nulla dolor, sollicitudin a leo vitae, malesuada semper lacus. Ut eleifend posuere mollis.</p>
 	</div>
 
+
+<div class="push"></div>
+
+
+
+	<!-- This is the image slideshow -->
+	<div id="slideContainer">
+		<h3 align="center">This a Slideshow tittle</h3>
+		<div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="images/slide.jpg" style="width:100%">
+		  <div class="text">Caption Text</div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="images/slide4.jpg" style="width:100%">
+		  <div class="text">Caption Two</div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="images/slide3.jpg" style="width:100%">
+		  <div class="text">Caption Three</div>
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+	</div>	
+
+
+
+<div class="push"></div>
+
+
+
+
+<div id="footer">
 	<footer class="footer-distributed footer" class="footer">
 
 		<div class="footer-left">
@@ -308,7 +372,8 @@
 			</div>
 
 		</footer>
-
+	</div>
+</div>
 		<script type="text/javascript">
 			$( document ).ready(function() {
 	            console.log( "ready!" );
@@ -332,12 +397,25 @@
 
 				    });
 				    
-				 } );
-			
-			document.getElementById("tr.remove3")
-
+				 } ); 
 	        });
-		</script>
 
+			// This siledshow JS
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+			    var i;
+			    var slides = document.getElementsByClassName("mySlides");
+			    for (i = 0; i < slides.length; i++) {
+			        slides[i].style.display = "none"; 
+			    }
+			    slideIndex++;
+			    if (slideIndex > slides.length) {slideIndex = 1} 
+			    slides[slideIndex-1].style.display = "block"; 
+			    setTimeout(showSlides, 1700); // Change image every 2 seconds
+			}
+			
+		</script>
 	</body>
 </html>

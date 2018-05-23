@@ -114,7 +114,7 @@
                   <label>
                     <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                   </label>
-                  <input type="submit" value="Proceed to payment" class="btn">
+                  <input id="myBtn" type="submit" value="Proceed to payment" class="btn">
                 </form>
               </div>
             </div>
@@ -136,6 +136,15 @@
               </div>
           </div>
         <div class="push"></div>
+
+         <!-- Pop up window after purchasing button -->
+         <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+
+
     </div>
 
 
@@ -197,6 +206,60 @@
 			</div>
 
 		</footer>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+              console.log( "ready!" );
+
+        $( function() {
+          $( "#draggable" ).draggable({
+                revert: true
+            });
+            $( "#droppable" ).droppable({
+              drop: function( event, ui ) {
+                $( this )
+                  .addClass( "ui-state-highlight" )
+                  .find( "p" )
+                    .html( "Dropped!" );
+                    console.log( "Dropped!" );
+              },
+              over: function (event, ui) {
+                  $('<li><span class="item2"><span class="item-left"><img src="images/booka2.jpg" alt="" /><span class="item-info"><span>Item name</span><span>23$</span></span></span><span class="item-right"><button class="btn btn-xs btn-danger pull-right">x</button></span></span></li>').insertBefore(".divider");
+                  alert("Your Item has been added to the shopping cart");
+             },
+
+            });
+            
+         } );
+      
+      // This is the pop up window JS
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+
+      });
+    </script>
 
 	</body>
 </html>
