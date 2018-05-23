@@ -19,6 +19,7 @@ session_start();
         <ul class="nav navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="/index.php">Home</a>
+		<a class="nav-link" href="/index.php">About Us</a>
             </li>
             <?php if(isset($_SESSION['admin_uqtext'])) {?>
                 <li class="nav-item">
@@ -26,22 +27,6 @@ session_start();
                 </li>
             <?php } ?>
         </ul>
-
-        <div class="col-sm-3 col-md-3">
-            <form action="/index.php" method="get"
-                  class="navbar-form"
-                  role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search"
-                           name="searchq">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i
-                                class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
 
         <div class="nav navbar-login">
             <ul class="nav navbar-nav navbar-right">
@@ -82,6 +67,22 @@ session_start();
                         </ul>
                     </div>
             </ul>
+        </div>
+
+<div class="col-sm-3 col-md-3">
+            <form action="/index.php" method="get"
+                  class="navbar-form"
+                  role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search"
+                           name="searchq">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i
+                                class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
 
     </div>
