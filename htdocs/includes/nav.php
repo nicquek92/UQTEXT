@@ -19,14 +19,33 @@ session_start();
         <ul class="nav navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="/index.php">Home</a>
-		<a class="nav-link" href="/index.php">About Us</a>
             </li>
+	<li class="nav-item">
+                <a class="nav-link" href="/index.php">About Us</a>
+            </li>
+	<li><a  class="nav-link" href="/signup.php">Sign Up</a>
             <?php if(isset($_SESSION['admin_uqtext'])) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/index.php">ADMIN PANEL</a>
                 </li>
             <?php } ?>
         </ul>
+
+		<div class="col-sm-3 col-md-3">
+            <form action="/index.php" method="get"
+                  class="navbar-form"
+                  role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search"
+                           name="searchq">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i
+                                class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <div class="nav navbar-login">
             <ul class="nav navbar-nav navbar-right">
@@ -60,29 +79,13 @@ session_start();
                                 <?php if (isset($_SESSION['email'])): ?>
                             <li><a class="btn" href="/logout.php">Log Out</a>
                                 <?php else: ?>
-                            <li><a  class="btn" href="/signup.php">Sign Up</a>
+                            
                             <li><a class="btn" href="/login.php">Log In</a>
                                 <?php endif; ?>
                             </li>
                         </ul>
                     </div>
             </ul>
-        </div>
-
-<div class="col-sm-3 col-md-3">
-            <form action="/index.php" method="get"
-                  class="navbar-form"
-                  role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search"
-                           name="searchq">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i
-                                class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
         </div>
 
     </div>
