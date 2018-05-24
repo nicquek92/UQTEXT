@@ -1,18 +1,16 @@
 <?php
+if(!isset($_SESSION)){
+    session_start();
+}
 include "includes/server_warnings.php";
 require_once "includes/config.php";
-require_once "includes/header.php";
-require_once "includes/nav.php";
 require_once "includes/functions.php";
-
 if (isset($_SESSION['email']) && isset($_SESSION['cus_id'])) {
     redirect_to("index.php");
 }
-
 $username_textbox = "";
 $password_textbox = "";
 $warning_text = "";
-
 if (isset($_COOKIE['remember-username'])) {
     $username_textbox = $_COOKIE['remember-username'];
     $password_textbox = $_COOKIE['remember-password'];
@@ -21,6 +19,7 @@ if (isset($_POST['login'])) {
     $username = secure_input($connection, $_POST['username']);
     $password = secure_input($connection, $_POST['password']);
     $md5password = md5(secure_input($connection, $_POST['password']));
+    $thisisadmin=false;
 
     //THIS IS FOR ADMINS
     $query = "SELECT * 
@@ -29,38 +28,47 @@ if (isset($_POST['login'])) {
               AND password='$md5password'";
     $result = runQuery($connection, $query);
     $rows = mysqli_num_rows($result);
-    if($rows==1){
-    $_SESSION['admin_uqtext']= $username;
-    }else{
+    if ($rows == 1) {
+        $_SESSION['admin_uqtext'] = $username;
+        $thisisadmin=true;
+    } else {
         //THIS IS FOR CUSTOMERS
         $query = "SELECT * FROM customers 
               WHERE email='$username'
               AND password='$md5password'
-              AND status=1";
+              AND status=0";
         $result = runQuery($connection, $query);
-
         $rows = mysqli_num_rows($result);
     }
-        if ($rows == 1) {
-
-            $_SESSION['email'] = $username;
-            if (isset($_POST['remember'])) {
-                setcookie("remember-username", $username,
-                    time() + (3600 * 24 * 30));
-                setcookie("remember-password", $password,
-                    time() + (3600 * 24 * 30));
-            }
-            if (empty($_SESSION['current_page'])) {
-                redirect_to("/index.php");
-            } else {
-                redirect_to($_SESSION['current_page']);
-            }
-        } else {
-            $warning_text = "Incorrect Username or Password";
+    if ($rows == 1) {
+        $_SESSION['email'] = $username;
+        if(!$thisisadmin){
+            $rows=mysqli_fetch_array($result);
+            $_SESSION['fname']=$rows['fname'];
+            $_SESSION['lname']=$rows['lname'];
         }
+        if (isset($_POST['remember'])) {
+            setcookie("remember-username", $username,
+                time() + (3600 * 24 * 30));
+            setcookie("remember-password", $password,
+                time() + (3600 * 24 * 30));
+        }
+        if (empty($_SESSION['current_page'])) {
+            redirect_to("/index.php");
+        } else {
+            redirect_to($_SESSION['current_page']);
+        }
+    } else {
+        $warning_text = "Incorrect Username or Password";
+    }
 }
+require "includes/header.php";
+require"includes/nav.php";
 ?>
-
+    <ul class="breadcrumb">
+        <li><a href="/index.php">Home</a></li>
+        <li><a href="/login.php">Log In</a></li>
+    </ul>
     <div class="container">
         <div id="loginbox" style="margin-top:50px;"
              class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">

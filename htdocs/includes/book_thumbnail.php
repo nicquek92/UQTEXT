@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-6">
     <div class="panel panel-default  panel--styled">
         <div class="panel-body">
             <div class="col-md-12 panelTop">
@@ -10,7 +10,7 @@
                     />
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-md-7">
 
                     <h2> <?php echo $row['title']; ?></h2>
 
@@ -38,35 +38,45 @@
                         </span>
                         <br/>
                     </p>
+                    <p>
+                    <p id="itemPrice">Price: $ <?php echo $row['price'] ?></p>
+                    </p>
                 </div>
             </div>
 
             <div class="col-md-12 panelBottom">
-                <div class="text-center">
-                    <div class="center">
-                       <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
-                <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-                            <input type="text" name="quant[2]" class="form-control
-                            input-number"
-                                                                                                           
-                                   value="1" min="1" max="100">
-                            <span class="input-group-btn">
-              <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-                        </div>
-                        <p></p>
+                <div class="col-md-2">
+
+                    <p>Rating: <?php echo $row['rating'] ?></p>
+
+                </div>
+                <div class="col-md-2">
+
+                    <input id="instock<?php echo $row['id'] ?>" hidden="hidden"
+                           type="text"
+                           value="<?php echo $row['quantity'] ?>"/>
+                                  </div>
+                <div class="col-md-4 text-center">
+                    <button id="<?php echo $row['id'] ?>"
+                            class="btn btn-lg btn-success btn-add-to-cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="col-md-4">
+
+                    <div id="qty">
+                        <button type="button" id="sub" class="sub">-</button>
+                        <input id="book_quantity<?php echo $row['id']?>" class="qty_box"
+                        type="number" value="1"
+                               min="1"
+                               max="<?php echo $row['quantity']?>" />
+                        <button type="button" about="<?php echo $row['id']?>"
+                                class="add">+</button>
                     </div>
-                        <button id="<?php echo $row['id']?>"
-                                class="btn btn-primary btn-lg btn-add-to-cart">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>
-                            Add to Cart
-                        </button>
+                    <p style="margin-left: 10px" >In Stock: <?php echo $row['quantity']
+                        ?></p>
+
                 </div>
                 <!-- hidden button for remove -->
                 <div id="remove" hidden="hidden" class="col-md-4 text-center">

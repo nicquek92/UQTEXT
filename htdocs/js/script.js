@@ -4,6 +4,7 @@ $(function () {
 //if session['shopping cart'] is set then btn-add-to-cart, shopping badge, and total
 // price will change
     load_index();
+
     function load_index() {
         //first get the session with ajax aka jQuery getJSON
         $.getJSON("Get_Session.php", function (data) {
@@ -14,13 +15,21 @@ $(function () {
                 console.log("LOAD with session");
                 var total = 0;
                 var badge = 0;
+                var count=1;
                 $.each(data, function (key, value) {
                     console.log(value.quantity);
-                    total += parseFloat(value.price)*parseInt(value.quantity);
+                    total += parseFloat(value.price) * parseInt(value.quantity);
                     badge++;
+                    badge += count * parseInt(value.quantity);
                     $('#' + value.id).parent().hide();
                     $('#remove' + value.id).parent().show();
-
+                    $('#book_quantity' + value.id).parent().hide();
+                    $('#peek_cart').append(
+                        "<tr>" +
+                        "<td><img class='peek_thumbnail' src='" + value.image + "'/></td><td>" +
+                        value.title + "</td><td>" + value.quantity + "</td><td>" + value.quantity*value.price +
+                        "</td></tr>"
+                    );
                 });
 
                 $('.badge').html(badge);
@@ -39,12 +48,14 @@ $(function () {
         var id = $(this).attr('id');
         $('#' + id).parent().hide();
         $('#remove' + id).parent().show();
+        $('#book_quantity' + id).parent().hide();
+        $('#peek_cart').html("");
         var title = $('#book_title' + id).val();
         var image = $('#book_image' + id).val();
         var author = $('#book_author' + id).val();
         var price = $('#book_price' + id).val();
         var desc = $('#book_desc' + id).val();
-        var quantity=$('#book_quantity'+id).val();
+        var quantity = $('#book_quantity' + id).val();
         console.log(title);
         $.ajax({
             url: "Insert_Session.php",
@@ -54,20 +65,27 @@ $(function () {
                 title: title,
                 author: author,
                 price: price,
-                quantity:quantity,
+                quantity: quantity,
                 desc: desc,
-                image:image
-                          },
+                image: image
+            },
             dataType: "json",
             success: function (data) {
 
                 var total = 0;
                 var badge = 0;
-                    $.each(data, function (key, value) {
-                        console.log(value.quantity);
-                        total += parseFloat(value.price)*parseInt(value.quantity);
-                        badge++;
-                    });
+                var count = 1;
+                $.each(data, function (key, value) {
+                    console.log(value.quantity);
+                    total += parseFloat(value.price) * parseInt(value.quantity);
+                    badge += count * parseInt(value.quantity);
+                    $('#peek_cart').append(
+                        "<tr>" +
+                        "<td><img class='peek_thumbnail' src='" + value.image + "'/></td><td>" +
+                        value.title + "</td><td>" + value.quantity + "</td><td>" + value.quantity*value.price +
+                        "</td></tr>"
+                    );
+                });
                 $('.badge').html(badge);
                 $('.total_price').html("$" + total);
             }
@@ -82,7 +100,8 @@ $(function () {
         console.log(id);
         $('#' + id).parent().show();
         $('#remove' + id).parent().hide();
-
+        $('#book_quantity' + id).parent().show();
+        $('#peek_cart').html("");
         $.ajax({
             url: "Delete_Session.php",
             method: "POST",
@@ -96,8 +115,14 @@ $(function () {
                 var badge = 0;
                 $.each(data, function (key, value) {
                     console.log(value.quantity);
-                    total += parseFloat(value.price)*parseInt(value.quantity);
+                    total += parseFloat(value.price) * parseInt(value.quantity);
                     badge++;
+                    $('#peek_cart').append(
+                        "<tr>" +
+                        "<td><img class='peek_thumbnail' src='" + value.image + "'/></td><td>" +
+                        value.title + "</td><td>" + value.quantity + "</td><td>" + value.quantity*value.price +
+                        "</td></tr>"
+                    );
                 });
                 $('.badge').html(badge);
                 $('.total_price').html("$" + total);
@@ -105,7 +130,7 @@ $(function () {
         })
     })
     /** Checkout Icon onclick **/
-    $('#checkout_btn').click(function () {
+    $('.checkout_btn').click(function () {
         if ($('.badge').html() > 0) {
             window.location.href = "checkout.php";
         } else {
@@ -113,7 +138,20 @@ $(function () {
         }
     });
 
-        /***************** Sign Up Form Validation ******************/
+    $('.add').click(function () {
+        var id = $(this).attr('about');
+        var instock = $('#instock' + id).val();
+        if ($(this).prev().val() < instock) {
+            $(this).prev().val(+$(this).prev().val() + 1);
+        }
+    });
+    $('.sub').click(function () {
+        if ($(this).next().val() > 1) {
+            if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+        }
+    });
+    $(".qty_box").prop("readonly", true);
+    /***************** Sign Up Form Validation ******************/
     //terms and condition check
     $('#btn-signup').attr('disabled', 'disabled');
     $('#terms').change(function () {
@@ -140,7 +178,7 @@ $(function () {
         }
         return true;
     });
-    $('#signupform').validate({
+    $('.signupform').validate({
         rules: {
             firstname: "required",
             lastname: "required",
@@ -181,20 +219,7 @@ $(function () {
         $('.sidenav').click(function () {
             $('#mySidenav').width("0px");
         })
-        
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
     });
 
@@ -206,6 +231,7 @@ $(function () {
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
     /*************************** ADMIN CRUD **************************/
     $('#update_admin').click(function () {
 
@@ -254,6 +280,7 @@ $(function () {
 
 
     /******************* Book CRUD ************************/
+    $("#image_src").prop("readonly", true);
 //search book data and fill in upload form
     $('#fillBookData').click(function () {
         bookObjectArray.length = 0;
@@ -375,26 +402,6 @@ $(function () {
 
 //click add_btn_book , update_btn_book, delete_btn_book
 //show add_book,
-    $('#update_book').hide();
-    $('#delete_book').hide();
-    $('#add_btn_book').click(function () {
-        $('#add_book').show();
-        $('#update_book').hide();
-        $('#delete_book').hide();
-         $('#searchforbookdetail').show();
-    })
-    $('#update_btn_book').click(function () {
-        $('#add_book').hide();
-        $('#update_book').show();
-        $('#delete_book').hide();
-        $('#searchforbookdetail').hide();
-     
-    })
-    $('#delete_btn_book').click(function () {
-        $('#add_book').hide();
-        $('#update_book').hide();
-        $('#delete_book').show();
-    })
 
 
 });

@@ -8,14 +8,11 @@ require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 include "includes/server_warnings.php";
 require_once "includes/config.php";
-require_once "includes/header.php";
-require_once "includes/nav.php";
 require_once "includes/functions.php";
-
 
 if (isset($_POST['signup'])) {
     $email = secure_input($connection, $_POST['email']);
-    $stu_id = secure_input($connection, $_POST['student_id'] . "");
+    $stu_id = secure_input($connection, $_POST['student_id']);
     $password = md5(secure_input($connection, $_POST['password']));
     $firstname = secure_input($connection, $_POST['firstname']);
     $lastname = secure_input($connection, $_POST['lastname']);
@@ -31,33 +28,33 @@ if (isset($_POST['signup'])) {
 )";
     $result = runQuery($connection, $query);
     if ($result) {
-        echo "Sending Email";
-        $mail = new PHPMailer(); // create a new object
-        $mail->IsSMTP(); // enable SMTP
-//$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-        $mail->SMTPAuth = true; // authentication enabled
-        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465; // or 587
-        $mail->IsHTML(true);
-        $mail->Username = "pouk.kyine.mdk29@gmail.com";
-        $mail->Password = "I'mawesome";
-        $mail->SetFrom("pouk.kyine.mdk29@gmail.com");
-        $mail->Subject = "UQ Text | Email Verification";
-        $mail->Body = "Please follow the link to activate UQ Text account: " .
-            "<a 
-href='https://www.infs3202-d7ba9642.uqcloud.net/helpers/verify_account.php?
-vhash=" . $hash . "&vemail=" . $email . "'>
-Click this link
-            </a>";
-        $mail->AddAddress($email);
-        if (!$mail->Send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
-        }
-
+//        echo "Sending Email";
+//        $mail = new PHPMailer(); // create a new object
+//        $mail->IsSMTP(); // enable SMTP
+////$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+//        $mail->SMTPAuth = true; // authentication enabled
+//        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+//        $mail->Host = "smtp.gmail.com";
+//        $mail->Port = 465; // or 587
+//        $mail->IsHTML(true);
+//        $mail->Username = "pouk.kyine.mdk29@gmail.com";
+//        $mail->Password = "I'mawesome";
+//        $mail->SetFrom("pouk.kyine.mdk29@gmail.com");
+//        $mail->Subject = "UQ Text | Email Verification";
+//        $mail->Body = "Please follow the link to activate UQ Text account: " .
+//            "<a
+//href='https://infs3202-d7ba9642.uqcloud.net/helpers/account_verification_failed.php?vhash=".$hash."&vemail=".$email."'>
+//Click this link
+//            </a>";
+//        $mail->AddAddress($email);
+//        if (!$mail->Send()) {
+//            echo "Mailer Error: " . $mail->ErrorInfo;
+//        }
         redirect_to("helpers/email_sent_message.php");
     }
 }
+require_once "includes/header.php";
+require_once "includes/nav.php";
 ?>
 
     <div class="container">
@@ -68,9 +65,9 @@ Click this link
                     <div class="panel-title">Sign Up</div>
                      </div>
                 <div class="panel-body">
-                    <form id="signupform" action="signup.php"
+                    <form id="" action="signup.php"
                           method="post"
-                          class="form-horizontal"
+                          class="signupform form-horizontal"
                           role="form">
 
                         <div class="form-group">
@@ -120,7 +117,7 @@ Click this link
                                    for="terms"></label>
                             <div class="col-md-9">
                                 <input type="checkbox" name="terms" id="terms"> I Agree
-                                <a href="#">Terms & Conditions </a>
+                                <a href="includes/term.php">Terms & Conditions </a>
 
                             </div>
                         </div>

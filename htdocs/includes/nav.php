@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
+  require_once "functions.php"
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,11 +23,6 @@ session_start();
             <li class="nav-item">
                 <a class="nav-link" href="/index.php">Home</a>
             </li>
-	<li class="nav-item">
-                <a class="nav-link" href="/index.php">About Us</a>
-            </li>
-	<li><a  class="nav-link" href="/signup.php">Sign Up</a>
-<li><a  class="nav-link" href="/signup.php">Make A Post</a>
             <?php if(isset($_SESSION['admin_uqtext'])) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/index.php">ADMIN PANEL</a>
@@ -32,7 +30,7 @@ session_start();
             <?php } ?>
         </ul>
 
-		<div class="col-sm-3 col-md-3">
+        <div class="col-sm-3 col-md-3">
             <form action="/index.php" method="get"
                   class="navbar-form"
                   role="search">
@@ -62,8 +60,8 @@ session_start();
                                 </a>
                             </li>
                             <li>
-                                <a id="checkout_btn" class="btn"
-                                   href="checkout.php"
+                                <a id="btn_checkout" class="checkout_btn btn"
+                                   href="#"
                                    title="Check Out">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
                                     <span class="badge"></span>
@@ -80,7 +78,7 @@ session_start();
                                 <?php if (isset($_SESSION['email'])): ?>
                             <li><a class="btn" href="/logout.php">Log Out</a>
                                 <?php else: ?>
-                            
+                            <li><a  class="btn" href="/signup.php">Sign Up</a>
                             <li><a class="btn" href="/login.php">Log In</a>
                                 <?php endif; ?>
                             </li>
@@ -90,5 +88,31 @@ session_start();
         </div>
 
     </div>
+
     <!-- /.navbar-collapse -->
 </nav>
+
+<div class="container">
+    <div id="mySidenav" class="sidenav">
+        <h2 style="margin-left: 20%">Your Cart
+        <a href="#" class="checkout_btn button"><span class="glyphicon
+        glyphicon-shopping-cart"></span></a>
+        </h2>
+        <hr/>
+
+                <table class="table table-striped ">
+                    <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Title</th>
+                        <th>Qty</th>
+                        <th>Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody id="peek_cart">
+
+                    </tbody>
+                </table>
+
+    </div>
+</div>

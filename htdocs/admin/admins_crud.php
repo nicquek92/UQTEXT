@@ -2,44 +2,17 @@
 require_once "../includes/server_warnings.php";
 require_once "../includes/config.php";
 require_once "../includes/functions.php";
+
+if(isset($_GET['userexist']) && $_GET['userexist']==true){
+    echo "<script>alert('Cannot add admin. Username Already Exist')</script>";
+    echo "<script>window.history.replaceState({}, document.title, \"/\" + \"admin/admins_crud.php\");</script>";
+}
+if(isset($_GET['nouser']) && $_GET['nouser']==true){
+    echo "<script>alert('Cannot delete admin. Username do not Exist')</script>";
+    echo "<script>window.history.replaceState({}, document.title, \"/\" + \"admin/admins_crud.php\");</script>";
+}
 require_once "../includes/header.php";
 require_once "../includes/nav.php";
-
-if (isset($_POST['add_admin'])) {
-    $username = secure_input($connection, $_POST['admin_username']);
-    $password = secure_input($connection, $_POST['admin_pass']);
-    $md5password = md5($password);
-    if (isset($_SESSION['admin_usernames']) && in_array($username,
-            $_SESSION['admin_usernames'])) {
-        echo "<script>alert('Cannot add admin. Username Already Exist')</script>";
-    } else {
-        $query = "INSERT INTO admins(username,password) VALUES('$username','$md5password')";
-        runQuery($connection, $query);
-    }
-
-} elseif (isset($_POST['delete_admin'])) {
-
-    $username = secure_input($connection, $_POST['admin_username']);
-    $query = "DELETE FROM admins WHERE username='$username'";
-    runQuery($connection, $query);
-    if (mysqli_affected_rows($connection) <= 0) {
-        echo "<script>alert('Cannot delete admin. Username do not Exist')</script>";
-    }
-
-} elseif (isset($_POST['update_admin'])) {
-
-    $username = secure_input($connection, $_POST['admin_username']);
-    $new_username = secure_input($connection, $_POST['admin_new_username']);
-    $new_password = secure_input($connection, $_POST['admin_new_pass']);
-    $md5password = md5($new_password);
-    $query = "UPDATE admins SET username='$new_username',password='$md5password'"
-        . " WHERE username='$username'";
-    runQuery($connection, $query);
-    if (mysqli_affected_rows($connection) <= 0) {
-        echo "<script>alert('Cannot update admin. Username do not Exist')</script>";
-    }
-    unset($_SESSION['admin_usernames']);
-}
 ?>
 <div class="container">
     <div class="row">
@@ -65,8 +38,9 @@ if (isset($_POST['add_admin'])) {
                 echo '<td>' . $row['username'] . '</td>';
                 echo '<td>' . $row['password'] . '</td>';
                 echo '</tr>';
-                $_SESSION['admin_usernames'][] = $row['username'];
+
             }
+
             ?>
             </tbody>
         </table>
@@ -89,7 +63,7 @@ if (isset($_POST['add_admin'])) {
             </div>
             <div class="panel-body">
 
-                <form action=""
+                <form action="admins_crud_helper.php"
                       id="admin_crud_form"
                       method="post"
                       class="form-horizontal"

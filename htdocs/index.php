@@ -1,26 +1,16 @@
 <?php
 include "includes/server_warnings.php";
 require_once "includes/config.php";
+require_once "includes/functions.php";
 require_once "includes/header.php";
 require_once "includes/nav.php";
-require_once "includes/functions.php";
 ?>
-
-<div class="container">
-    <div id="mySidenav" class="sidenav">
-<ol>
-    <li>
-        <img id="peek_thumbnail" width="30px" src="imgs/book.png"/>
-        Item 1 - $10 - 3<span class="glyphicon glyphicon-trash text-danger"></span></li>
-
-</ol>
-    </div>
-<script>
-
-</script>
+<ul class="breadcrumb">
+    <li><a href="/index.php">Home</a></li>
+</ul>
         <?php
         $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
-
+//SEARCH
         if (isset($_GET['searchq'])) {
             $searchkey = secure_input($connection, $_GET['searchq']);
             $result = runQuery($connection, "SELECT * FROM books 
@@ -31,8 +21,10 @@ require_once "includes/functions.php";
             while ($row = mysqli_fetch_assoc($result)) {
                 include "includes/book_thumbnail.php";
             }
-        } else {
-            $result = runQuery($connection, "SELECT * FROM books");
+        }
+        //NORMAL LOAD
+        else {
+            $result = runQuery($connection, "SELECT * FROM books ORDER BY id DESC");
             while ($row = mysqli_fetch_assoc($result)) {
                 include "includes/book_thumbnail.php";
             }

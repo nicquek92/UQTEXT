@@ -1,72 +1,21 @@
 <?php
+if(isset($_SESSION)){
+    session_start();
+}
 require_once "../includes/server_warnings.php";
 require_once "../includes/config.php";
 require_once "../includes/functions.php";
+if(isset($_GET['imgerr']) &&  $_GET['imgerr']=="true") {
+    echo "<script>alert('Please use valid image.')</script>";
+    echo "<script>window.history.replaceState({}, document.title, \"/\" + \"admin/books_crud.php\");</script>";
+}
+
+if(isset($_GET['failed']) && $_GET['failed']=="true"){
+    echo "<script>alert('Add book failed. The book exist in the database. Please use update funciton.')</script>";
+    echo "<script>window.history.replaceState({}, document.title, \"/\" + \"admin/books_crud.php\");</script>";
+}
 require_once "../includes/header.php";
 require_once "../includes/nav.php";
-
-if (isset($_POST['add_book'])) {
-    /** IMAGE UPLOAD TO SERVER **/
-    // Check if file was uploaded without errors
-    $imgerr = true;
-
-    if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
-        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
-        $filename = $_FILES["photo"]["name"];
-        $filetype = $_FILES["photo"]["type"];
-        $filesize = $_FILES["photo"]["size"];
-        // Verify file extension
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        $maxsize = 5 * 1024 * 1024;
-        If ($filesize > $maxsize) {
-          $imgerr=true;
-        }elseif (in_array($filetype, $allowed)) {
-            $hash=md5(rand(0,100));
-            $uncompress_img="../imgs/" .$hash. $_FILES["photo"]["name"];
-            $compress_img="../imgs_min/" .$hash. $_FILES["photo"]["name"];
-            move_uploaded_file($_FILES["photo"]["tmp_name"],$uncompress_img);
-            echo "Uncompress";
-            $compress_img=compressImage($uncompress_img,$compress_img);
-            move_uploaded_file($_FILES["photo"]["tmp_name"],$compress_img);
-            $imgerr = false;
-            echo "compress";
-            echo "uploaded";
-        } else {
-            echo "damn";
-            $imgerr = true;
-        }
-    }
-
-    $isbn = $_POST['isbn'];
-    $title = secure_input($connection, $_POST['title']);
-
-    if ($_POST['image'] == "0") {
-        $image = secure_input($connection, $uncompress_img);
-        $image_min = secure_input($connection, $compress_img);
-    } else {
-        $image = secure_input($connection, $_POST['image']);
-        $image_min = secure_input($connection, $_POST['image']);
-    }
-    $author = secure_input($connection, $_POST['author']);
-    $original_price = (float)secure_input($connection, $_POST['original_price']);
-    $rating = (float)secure_input($connection, $_POST['rating']);
-    $price = (float)secure_input($connection, $_POST['price']);
-    $quantity = (int)secure_input($connection, $_POST['quantity']);
-    $course_tags=secure_input($connection, $_POST['course_tags']);
-    $description = secure_input($connection, $_POST['description']);
-    if ($imgerr) {
-        echo "<script>alert('Please use valid image.')</script>";
-    } elseif (isset($_SESSION['isbn_exist']) && in_array($isbn,
-            $_SESSION['isbn_exist'])) {
-        echo "<script>alert('Plaese use Update function for existing book.')</script>";
-    } else {
-        $query = "INSERT INTO books(isbn,title,image,image_min,author,original_price,rating,price,
-quantity,course_tags,description) VALUES('$isbn','$title','$image','$image_min','$author',
-'$original_price','$rating','$price','$quantity','$course_tags','$description')";
-        runQuery($connection, $query);
-    }
-    unset($_SESSION['isbn_exist']);
-}
 ?>
     <div class="container">
         <div class="row">
@@ -109,32 +58,45 @@ quantity,course_tags,description) VALUES('$isbn','$title','$image','$image_min',
                     echo '<td>' . $row['course_tags'] . '</td>';
                     echo '<td>' . $row['description'] . '</td>';
                     echo '</tr>';
-                    $_SESSION['isbn_exist'][] = $row['isbn'];
+
                 }
                 ?>
                 </tbody>
             </table>
+            <form action="books_crud_helper.php" method="post" id="delete_book_form">
+                <div class="form-group col-md-6 pull-left">
+                    <div class="col-md-3">
+                        <input type="text" name="book_id" placeholder="Enter book id
+                        to Delete" />
+
+                    </div>
+
+                     <div class="col-md-3">
+                        <input class="btn btn-danger form-control" id="delete_book"
+                               type="submit"
+                               name="delete_book" value="Delete"/>
+                    </div>
+                </div>
+            </form>
         </div>
     </div> <!-- /container -->
     <hr/>
-    <div class="text-center" width="100%">
-        <button id="add_btn_book" class="btn btn-default">Add</button>
-        <button id="update_btn_book" class="btn btn-default">Update</button>
-        <button id="delete_btn_book" class="btn btn-default">Delete</button>
-    </div>
-    <hr/>
+      <hr/>
+
     <div class="container">
 
-        <form enctype="multipart/form-data" action="" method="post" id="bookform"
+
+        <form enctype="multipart/form-data" action="books_crud_helper.php" method="post" id="bookform"
               class="form-horizontal">
             <fieldset>
                 <!-- Form Name -->
-                <legend class="text-center">
-                    Search Book Title You want to upload
+                <legend class="update-change text-center">
+                    Search Book Title FROM GOOGLE
                 </legend>
                 <!-- Text input-->
-                <div id="searchforbookdetail" class="form-group">
-                    <label class="col-md-4 control-label" for="searchBook">Search For
+                <div id="searchforbookdetail" class="update-hide form-group">
+                    <label class="col-md-4 control-label" for="searchBook">Search
+                        For
                         Book Detail</label>
                     <div class="col-md-4">
                         <input class="form-control" id="searchBook" type="search">
@@ -146,7 +108,7 @@ quantity,course_tags,description) VALUES('$isbn','$title','$image','$image_min',
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="update-hide form-group">
                     <label class="col-md-4 control-label" for="selectBook">Select Your
                         Book
                     </label>
@@ -179,7 +141,7 @@ quantity,course_tags,description) VALUES('$isbn','$title','$image','$image_min',
                     <label class="col-md-4 control-label" for="image">Cover</label>
                     <div class="col-md-4">
                         <!-- Google API image link -->
-                        <input hidden="hidden" type="text" name="image" id="image_src"/>
+                        <input required="required" type="text" name="image" id="image_src"/>
                         <br/>
                         <img id="image" class="img-thumbnail" width="200px"
                              height="300px"
@@ -283,14 +245,7 @@ quantity,course_tags,description) VALUES('$isbn','$title','$image','$image_min',
                                name="update_book" value="Update"/>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="submit"></label>
-                    <div class="col-md-4">
-                        <input class="btn btn-danger form-control" id="delete_book"
-                               type="submit"
-                               name="delete_book" value="Delete"/>
-                    </div>
-                </div>
+
             </fieldset>
         </form>
     </div>

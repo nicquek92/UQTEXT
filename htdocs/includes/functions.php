@@ -36,7 +36,3 @@ function compressImage($source_image, $compress_image) {
     }
     return $compress_image;
 }
-
-function isfloat($f)
-{return ($f == (string)(float)$f);
-}

@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '18befa56cc5ed0ea');
+define('DB_PASSWORD', '13b4e7b7e54d1574');
 define('DB_NAME', 'db_uq');
 
 /* Attempt to connect to MySQL database */

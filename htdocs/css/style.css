@@ -28,10 +28,11 @@ Product Card Styles
     padding-top: 20px;
 }
 
-span.itemPrice {
+#itemPrice {
     font-size: 24px;
-    color: #FA5B58;
+    color: #810326;
 }
+
 
 
 
@@ -87,18 +88,19 @@ span.glyphicon {
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-#peek_thumbnail{
+.peek_thumbnail{
     margin-right: 10px;
+    width:30px;
 }
 /* The navigation menu links */
-.sidenav li{
-    margin:10px;
-    text-decoration: none;
-    font-size: x-large;
-    color: #818181;
-    display: block;
+/*.sidenav li{*/
+    /*margin:10px;*/
+    /*text-decoration: none;*/
+    /*font-size: x-large;*/
+    /*color: #818181;*/
+    /*display: block;*/
 
-}
+/*}*/
 
 /* When you mouse over the navigation links, change their color */
 
@@ -118,8 +120,8 @@ span.glyphicon {
     }
 }
 
-.center{
+#qty{
     width: 150px;
-    margin: 40px auto;
+    margin: 10px;
 
 }

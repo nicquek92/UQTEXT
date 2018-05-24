@@ -1,5 +1,3 @@
-
-
 <?php
 include "../includes/server_warnings.php";
 require_once "../includes/config.php";
