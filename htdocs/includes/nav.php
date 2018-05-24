@@ -24,6 +24,7 @@ session_start();
                 <a class="nav-link" href="/index.php">About Us</a>
             </li>
 	<li><a  class="nav-link" href="/signup.php">Sign Up</a>
+<li><a  class="nav-link" href="/signup.php">Make A Post</a>
             <?php if(isset($_SESSION['admin_uqtext'])) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/index.php">ADMIN PANEL</a>
