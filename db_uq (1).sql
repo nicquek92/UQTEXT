@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2018 at 02:16 AM
+-- Generation Time: May 24, 2018 at 04:36 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -39,8 +39,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`) VALUES
-(26, 'adminjohn', '827ccb0eea8a706c4c34a16891f84e7b'),
-(28, 'nono', 'c625ade02c3acde8e4d9de57fca78203');
+(8, 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -68,11 +67,9 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `image`, `image_min`, `title`, `isbn`, `author`, `course_tags`, `original_price`, `rating`, `price`, `quantity`, `description`) VALUES
-(56, 'http://books.google.com/books/content?id=1PgCCVryjOQC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'http://books.google.com/books/content?id=1PgCCVryjOQC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'Learning SQL', '9780596555580', 'Alan Beaulieu', 'INFS7202', '40.69', '5.0', '20.00', 3, 'Good book. Missing One page. No Scratch.'),
-(57, 'http://books.google.com/books/content?id=ppjUtAEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api', 'http://books.google.com/books/content?id=ppjUtAEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api', 'Fullstack React', '0991344626', 'Accomazzo Anthony,Murray Nathaniel,Lerner Ari', 'INFS7202', '0.00', '0.0', '10.00', 3, 'Good book. Missing One page. No Scratch.'),
-(58, 'http://books.google.com/books/content?id=2S_Y6Zm02BQC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'http://books.google.com/books/content?id=2S_Y6Zm02BQC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'Programming PHP', '9781449365837', 'Kevin Tatroe,Peter MacIntyre,Rasmus Lerdorf', 'INFS7202', '35.19', '4.5', '20.00', 3, 'Good book. Missing One page. No Scratch.'),
-(59, 'http://books.google.com/books/content?id=MZFRAQAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'http://books.google.com/books/content?id=MZFRAQAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'Code Name: Johnny Walker', '9780062267573', 'Johnny Walker,Jim DeFelice', 'INFS7202', '19.99', '4.0', '10.00', 3, 'Good book. Missing One page. No Scratch.'),
-(60, 'http://books.google.com/books/content?id=Q9OP0ClTTvIC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'http://books.google.com/books/content?id=Q9OP0ClTTvIC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'PHP 5 For Dummies', '0764556622', 'Janet Valade', 'INFS7202', '39.99', '3.0', '20.00', 3, 'Good book. Missing One page. No Scratch.');
+(4, 'http://books.google.com/books/content?id=21CctAEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api', 'http://books.google.com/books/content?id=21CctAEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api', 'React.js for Busies', '', 'Shawna Evans', 'INFS7202', '0.00', '0.0', '20.00', 3, 'PHP is the main language n infs7202. This textbook can be used as reference in the class.'),
+(5, 'http://books.google.com/books/content?id=O_KRDgAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'http://books.google.com/books/content?id=O_KRDgAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'Deadpool', '9781302497224', 'Alan Beaulieu', 'INFS7202', '3.45', '0.0', '20.00', 3, 'PHP is the main language n infs7202. This textbook can be used as reference in the class.'),
+(6, 'http://books.google.com/books/content?id=wAcyDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'http://books.google.com/books/content?id=wAcyDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api', 'Spider-Man/Deadpool Vol. 1', '9781302490034', 'Joe Kelly', 'INFS7202', '20.77', '5.0', '20.00', 3, 'PHP is the main language n infs7202. This textbook can be used as reference in the class.');
 
 -- --------------------------------------------------------
 
@@ -96,14 +93,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `fname`, `lname`, `email`, `password`, `status`, `student_id`, `hash`) VALUES
-(1, 'GG', 'WP', 'ggwp@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 0, 2134123, ''),
-(2, 'john', 'henry', 'johnhenry@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 12345, ''),
-(3, 'green', 'day', 'green@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 0, 0, ''),
-(4, 'Brian', 'Griffin', 'brian@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 0, 0, ''),
-(5, 'dj', 'fighter', 'dj@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 0, 0, '42e77b63637ab381e8be5f8318cc28a2'),
-(7, 'pyae phyo', 'kyaw', 'pyaephyokyaw.22121996@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 45234234, 'b73dfe25b4b8714c029b37a6ad3006fa'),
-(10, 'pouk', 'kyine', 'pouk.kyine.yangon@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 1, 123123, '8e98d81f8217304975ccb23337bb5761'),
-(11, 'asdf', 'asdf', 'pouk.kyine.yangon@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 0, 234234, 'f7177163c833dff4b38fc8d2872f1ec6');
+(1, 'GGWP', 'PPWG', 'ggwp@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 0, 12412412, 'ede7e2b6d13a41ddf9f4bdef84fdc737');
 
 --
 -- Indexes for dumped tables
@@ -135,19 +125,19 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
