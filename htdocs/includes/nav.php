@@ -23,6 +23,7 @@ if(!isset($_SESSION)){
             <li class="nav-item">
                 <a class="nav-link" href="/index.php">Home</a>
             </li>
+<li><a  class="btn" href="/signup.php">Sign Up</a>
             <?php if(isset($_SESSION['admin_uqtext'])) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/index.php">ADMIN PANEL</a>
@@ -78,7 +79,7 @@ if(!isset($_SESSION)){
                                 <?php if (isset($_SESSION['email'])): ?>
                             <li><a class="btn" href="/logout.php">Log Out</a>
                                 <?php else: ?>
-                            <li><a  class="btn" href="/signup.php">Sign Up</a>
+                          
                             <li><a class="btn" href="/login.php">Log In</a>
                                 <?php endif; ?>
                             </li>

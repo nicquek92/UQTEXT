@@ -22,13 +22,12 @@
                             <p class="footer-links">
                                 <a href="#">Home</a>
                                 ·
-                                <a href="#">Categories</a>
+                        	<a href="/signup.php">Sign Up</a>
+                                .
+                                <a href="#">View Cart</a>
                                 ·
-                                <a href="#">About</a>
-                                ·
-                                <a href="#">Login</a>
-                                ·
-                                <a href="#">Contact Us</a>
+                                <a href="/login.php">Login</a>
+                                
                             </p>
 
                             <p class="footer-company-name">UQText &copy; 2018</p>
@@ -38,7 +37,7 @@
 
                             <div>
                                 <i class="address"></i>
-                                <p>Brisbane, 55 Wool Street</p>
+                                <p>Brisbane, 55 Hello Street</p>
                             </div>
 
                             <div>
